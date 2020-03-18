@@ -56,16 +56,76 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
+  font-style: italic;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #fff;
+  color: #c0c0c0;
   text-decoration: none;
+}
+
+.navbar.navbar-fixed-top.navbar-inverse {
+  background-color: teal;
+}
+
+.nav.navbar-nav.navbar-right {
+  font-weight: bold;
+}  
+
+.navbar-inverse .navbar-nav > li > a{
+  color: #fff;
+}  
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #c0c0c0;
+  text-decoration: none;
+}
+
+.navbar-inverse .navbar-nav > .open > a:hover {
+  background-color:teal;
+}
+
+.navbar-inverse .navbar-nav > .open > a, {
+  background-color:teal;
+}
+
+.dropdown:hover {
+  background-color:teal;
+}
+
+.navbar-nav > .dropdown.open > a.dropdown-toggle {
+  background-color: teal;
+} 
+
+/*メイン*/
+
+h2{
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.center-jumbotron{
+  background-color:fff;
+ }
+.center-jumbotron > h1{
+  font-style:italic;
+  font-size: 63px;
+}
+/* ログインフォーム */
+
+.label-login {
+  margin-top: 5px;
+}
+
+.btn-login {
+  margin-top: 10px;
 }
 
 /* デバッグウインドウ */
