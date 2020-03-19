@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   
   def new
+    @task = Task.new
   end
   
   def create
@@ -8,5 +9,6 @@ class TasksController < ApplicationController
   end
   
   def index
+    @task = Task.all
   end
 end
