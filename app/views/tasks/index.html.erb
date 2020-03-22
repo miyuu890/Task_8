@@ -16,6 +16,8 @@
      <tr>
       <td><%= task.name %></td>
       <td><%= task.created_at %></td>
+      <td><%= link_to "編集", edit_user_task_path(@user,task), class: "btn btn-lg btn-success" %></td>
+      <td><%= link_to "削除",signup_path,class: "btn btn-lg btn-danger" %></td>
       <td></td>
      </tr>
      <% end %>

@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_user
   
   def index
-     @tasks = Task.all
+     @tasks = current_user.tasks.all
   end
   
   def new
@@ -13,11 +13,16 @@ class TasksController < ApplicationController
     @task = @user.tasks.build(task_params)
     if @task.save
       flash[:success] = "新しいタスクを作成しました。"
-    redirect_to tasks_index_url
+    redirect_to user_tasks_url(current_user)
     else
       render :new
     end  
   end
+  
+  def edit
+    @task = Task.find(params[:id])
+  end
+  
   
   private
   
