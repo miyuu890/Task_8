@@ -13,7 +13,7 @@
     </tr>
     <tr>
       <th class="active col-md-2"><%= Task.human_attribute_name :description %></th>
-      <td><%= raw Rinku.auto_link(@task.description, :all, 'target="_blank"') %></td>
+      <td><%= @task.description %></td>
     </tr>
     <tr>
       <th class="active col-md-2"><%= Task.human_attribute_name :created_at %></th>
