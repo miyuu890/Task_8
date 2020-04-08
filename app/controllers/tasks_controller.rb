@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
   before_action :set_user
+  before_action :logged_in_user, only: [:new, :index,:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:new, :edit, :update]
   
   def index
-     @tasks = current_user.tasks.all
+     @tasks = current_user.tasks.all.order(created_at: :desc)
   end
   
   def show
@@ -49,6 +51,18 @@ class TasksController < ApplicationController
   
     def set_user
       @user = User.find(params[:user_id])
+    end
+    
+    def logged_in_user
+     unless logged_in?
+     flash[:danger] = "ログインしてください。"
+     redirect_to login_url
+     end
+    end
+    
+    def correct_user
+     
+      redirect_to(root_url) unless current_user?(@user)
     end
     
     def task_params
