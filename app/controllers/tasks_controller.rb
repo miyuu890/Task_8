@@ -61,8 +61,10 @@ class TasksController < ApplicationController
     end
     
     def correct_user
-     
-      redirect_to(root_url) unless current_user?(@user)
+      unless  current_user?(@user)
+      flash[:danger] = "このユーザーは編集できません。"
+      redirect_to(user_tasks_url) 
+      end
     end
     
     def task_params
